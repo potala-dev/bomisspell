@@ -1,7 +1,8 @@
 import re
+import random
 from botok.textunits.sylcomponents import SylComponents
 
-def get_syl(word):
+def get_syls(word):
     """Return syllable of a word
 
     Args:
@@ -11,19 +12,10 @@ def get_syl(word):
         list: syllable of the words
     """
     chunks = re.split('་', word)
-    
     syls= []
-    cur_syl = ''
-
     for chunk in chunks:
-        if chunk == "་":
-            cur_syl += chunk
-            syls.append(cur_syl)
-            cur_syl = ''
-        else:
-            cur_syl += chunk
-    if cur_syl:
-        syls.append(cur_syl)
+        if chunk:
+            syls.append(chunk)
     return syls
 
 def is_consonant(char):
@@ -217,8 +209,10 @@ def get_misspelled_opt(syl_parts):
     options = set(options)
     return list(options)
 
-if __name__ == "__main__":
-    syl_parts = parse_syl('འཇུག')
-    options = get_misspelled_opt(syl_parts)
-    print(options)
-
+def get_misspelled_word(word):
+    syl = word.replace('་', '')
+    syl_parts = parse_syl(syl)
+    misspelled_syls = get_misspelled_opt(syl_parts)
+    result = random.sample(misspelled_syls, 3)
+    result.append(word)
+    return result
