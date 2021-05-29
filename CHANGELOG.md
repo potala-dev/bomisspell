@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v0.0.3 (2021-05-29)
+### Fix
+* **mingzhi-options:** Misspelled word generated using similar sound mingzhi ([`1d7f747`](https://github.com/potala-dev/bomisspell/commit/1d7f747cd4127110f497419de9200513b01d991b))
+
 ## v0.0.2 (2021-05-25)
 ### Fix
 * **option-gen:** Option generator code added ([`fb93405`](https://github.com/potala-dev/bomisspell/commit/fb93405b4030506fff89f68729b134fc330a92c0))
