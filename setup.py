@@ -30,6 +30,11 @@ setuptools.setup(
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
+    package_data={
+        "bomisspell": [
+            "resources/*",
+        ]
+    },
     install_requires=[
         "botok>=0.8.6, <8.0",
     ],

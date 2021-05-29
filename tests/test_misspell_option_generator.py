@@ -12,5 +12,5 @@ def mingzhi_mapping():
 def test_misspelled_opt(mingzhi_mapping):
     syl_parts = parse_syl('འཇུག')
     expected_options = ['ཇུག་', 'གཇུག་', 'དཇུག་', 'བཇུག་', 'མཇུག་', 'འབྱུག་', 'འལྗུག་', 'འརྗུག་', 'འཇུགས་', 'འཇུགད་']
-    options = get_misspelled_opt(syl_parts, mingzhi_mapping)
+    options = get_misspelled_opt(syl_parts, mingzhi_mapping={})
     assert expected_options == options

@@ -37,8 +37,10 @@ def test_mingzhi_without_mapping(mingzhi_mapping):
 
 def test_mingzhi_only():
     syl = 'སྐྲ'
-    mingzhi_map = yaml.safe_load(Path('./resources/mingzhi_mapping.yaml').read_text(encoding='utf-8'))
+    # mingzhi_map = {
+    #     'སྐྲ': ['ཀྲ','ཏྲ','པྲ','སྤྲ','ཊ']
+    # }
     syl_parts = parse_syl(syl)
     expected_options = ['ཀྲ་','ཏྲ་','པྲ་','སྤྲ་','ཊ་']
-    options = get_mingzhi_options(syl_parts, mingzhi_map)
+    options = get_mingzhi_options(syl_parts)
     assert expected_options == options

@@ -9,9 +9,7 @@ from bomisspell.sgnon_jung import get_sngon_jug_options
 from bomisspell.mingzhi import get_mingzhi_options
 from bomisspell.yang_jug import get_yang_jug_options
 
-MINGZHI_MAPPING = yaml.safe_load(Path('./resources/mingzhi_mapping.yaml').read_text(encoding='utf-8'))
-
-def get_misspelled_opt(syl_parts, mingzhi_mapping):
+def get_misspelled_opt(syl_parts, mingzhi_mapping={}):
     """Return all the combination of misspelled syllable by shuffeling sngonjug, yangjug and replacing mingzhi by its similar pronounciation
 
     Args:
@@ -20,15 +18,19 @@ def get_misspelled_opt(syl_parts, mingzhi_mapping):
     Returns:
         list: misspelled options of the syllable
     """
+    if not mingzhi_mapping:
+        mingzhi_mapping_path  = Path(__file__).parent / "resources/mingzhi_mapping.yaml"
+        mingzhi_mapping = yaml.load(mingzhi_mapping_path.read_text(encoding='utf-8'), Loader=yaml.CLoader)
     options = []
     options += get_sngon_jug_options(syl_parts)
     options += get_mingzhi_options(syl_parts, mingzhi_mapping)
     options += get_yang_jug_options(syl_parts)
     return options
 
-def get_misspelled_word(word, mingzhi_mapping = None):
+def get_misspelled_word(word, mingzhi_mapping = {}):
     if not mingzhi_mapping:
-        mingzhi_mapping = MINGZHI_MAPPING
+        mingzhi_mapping_path  = Path(__file__).parent / "resources/mingzhi_mapping.yaml"
+        mingzhi_mapping = yaml.load(mingzhi_mapping_path.read_text(encoding='utf-8'), Loader=yaml.CLoader)
     syl = word.replace('་', '')
     syl_parts = parse_syl(syl)
     misspelled_syls = get_misspelled_opt(syl_parts, mingzhi_mapping)
