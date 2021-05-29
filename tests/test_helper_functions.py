@@ -1,4 +1,4 @@
-from bomisspell.option_generator import *
+from bomisspell.utils import get_syls, parse_syl
 
 
 def test_get_syls():

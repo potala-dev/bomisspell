@@ -1,12 +1,16 @@
-from bomisspell.option_generator import get_misspelled_opt, get_misspelled_word, parse_syl
+import pytest
 
+from bomisspell.option_generator import get_misspelled_opt
+from bomisspell.utils import parse_syl
 
-def test_misspelled_opt():
+@pytest.fixture(scope="module")
+def mingzhi_mapping():
+    return {
+        'སྔ': ['ལྔ', 'རྔ'],
+        'ཇ': ['བྱ', 'ལྗ', 'རྗ'],
+    }
+def test_misspelled_opt(mingzhi_mapping):
     syl_parts = parse_syl('འཇུག')
-    expected_options = ['གཇུགས་', 'དཇུགད་', 'མཇུགད་', 'ཇུག་', 'འཇུག་', 'ཇུགས་', 'གཇུགད་', 'བཇུགད་', 'བཇུགས་', 'བཇུག་', 'གཇུག་', 'མཇུགས་', 'དཇུགས་', 'ཇུགད་', 'དཇུག་', 'མཇུག་']
-    options = get_misspelled_opt(syl_parts)
-    assert frozenset(expected_options) == frozenset(options)
-
-def test_get_misspelled_word():
-    word = "བསྔགས"
-    misspelled_words = get_misspelled_word(word)
+    expected_options = ['ཇུག་', 'གཇུག་', 'དཇུག་', 'བཇུག་', 'མཇུག་', 'འབྱུག་', 'འལྗུག་', 'འརྗུག་', 'འཇུགས་', 'འཇུགད་']
+    options = get_misspelled_opt(syl_parts, mingzhi_mapping)
+    assert expected_options == options
