@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v0.0.5 (2021-06-01)
+### Fix
+* **util:** Yaml loader and dumper is changed to csafeloader and csafedumper for faster loading and dumping ([`b1b3d38`](https://github.com/potala-dev/bomisspell/commit/b1b3d3871ee8eb119533a532944672060369cfe0))
+
 ## v0.0.4 (2021-05-29)
 ### Fix
 * **mingzhi:** Mingzhi mapping resource access correctly ([`a120852`](https://github.com/potala-dev/bomisspell/commit/a1208525f4234715dd0bceb970aa9fac4b9b1d00))
