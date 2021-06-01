@@ -1,5 +1,3 @@
-
-
 def get_sngon_jug_options(syl_parts):
     """Return different combination sngonjug on syllable
 

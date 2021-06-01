@@ -1,5 +1,13 @@
 import re
+import pylibyaml
+import yaml
 from botok.textunits.sylcomponents import SylComponents
+
+def to_yaml(data):
+    return yaml.dump(data, sort_keys=False, allow_unicode=True, Dumper=yaml.CSafeDumper)
+    
+def from_yaml(data):
+    return yaml.load(data, Loader=yaml.CSafeLoader)
 
 def get_syls(word):
     """Return syllable of a word

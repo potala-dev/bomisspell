@@ -37,6 +37,7 @@ setuptools.setup(
     },
     install_requires=[
         "botok>=0.8.6, <8.0",
+        "pylibyaml>=0.1.0, <2.0"
     ],
     python_requires=">=3.8",
     tests_require=["pytest"],

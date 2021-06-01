@@ -1,5 +1,3 @@
-
-
 def get_yang_jug_options(syl_parts):
     """Return different combination yangjug on syllable
 
