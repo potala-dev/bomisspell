@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v0.0.6 (2021-06-01)
+### Fix
+* **option_generator:** Multi syllable word misspelled option generation supported ([`e977253`](https://github.com/potala-dev/bomisspell/commit/e9772533b1850470758c6ef0a0aa5af8d15eb474))
+
 ## v0.0.5 (2021-06-01)
 ### Fix
 * **util:** Yaml loader and dumper is changed to csafeloader and csafedumper for faster loading and dumping ([`b1b3d38`](https://github.com/potala-dev/bomisspell/commit/b1b3d3871ee8eb119533a532944672060369cfe0))
