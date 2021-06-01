@@ -1,7 +1,7 @@
 import re
-import yaml
 
 from pathlib import Path
+from bomisspell.utils import to_yaml
 
 def parse_options(options_pat):
     options = []
@@ -28,5 +28,5 @@ def create_mapping(mapping):
 if __name__ == "__main__":
     mapping = Path('./mapping.txt').read_text(encoding='utf-8')
     mingzhi_mapping = create_mapping(mapping)
-    mingzhi_mapping = yaml.safe_dump(mingzhi_mapping, sort_keys=False, allow_unicode=True)
+    mingzhi_mapping = to_yaml(mingzhi_mapping, sort_keys=False, allow_unicode=True)
     Path('./mingzhi_mapping.yaml').write_text(mingzhi_mapping, encoding='utf-8')

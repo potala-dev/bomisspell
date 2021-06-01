@@ -1,5 +1,5 @@
-import yaml
 from pathlib import Path
+from bomisspell.utils import from_yaml
 
 def parse_mingzhi(mingzhi):
     """Parse mingzhi char and vowel
@@ -28,7 +28,7 @@ def get_mingzhi_options(syl_parts, mingzhi_mapping={}):
     """
     if not mingzhi_mapping:
         mingzhi_mapping_path  = Path(__file__).parent / "resources/mingzhi_mapping.yaml"
-        mingzhi_mapping = yaml.load(mingzhi_mapping_path.read_text(encoding='utf-8'), Loader=yaml.CLoader)
+        mingzhi_mapping = from_yaml(mingzhi_mapping_path.read_text(encoding='utf-8'))
     options = []
     cur_sngon_jug = syl_parts['sngon_jug']
     cur_mingzhi, mingzhi_vowel = parse_mingzhi(syl_parts['mingzhi'])

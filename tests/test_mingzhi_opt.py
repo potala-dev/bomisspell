@@ -1,7 +1,4 @@
 import pytest
-import yaml
-
-from pathlib import Path
 
 from bomisspell.mingzhi import get_mingzhi_options
 from bomisspell.utils import parse_syl
@@ -37,9 +34,6 @@ def test_mingzhi_without_mapping(mingzhi_mapping):
 
 def test_mingzhi_only():
     syl = 'སྐྲ'
-    # mingzhi_map = {
-    #     'སྐྲ': ['ཀྲ','ཏྲ','པྲ','སྤྲ','ཊ']
-    # }
     syl_parts = parse_syl(syl)
     expected_options = ['ཀྲ་','ཏྲ་','པྲ་','སྤྲ་','ཊ་']
     options = get_mingzhi_options(syl_parts)
