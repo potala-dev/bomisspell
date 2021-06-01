@@ -155,3 +155,11 @@ def parse_syl(syl):
             'yang_jug': yang_jug
         }
     return syl_parts
+
+def build_syl(syl_parts):
+    sngon_jug = syl_parts.get('sngon_jug', '')
+    mingzhi = syl_parts.get('mingzhi', '')
+    jes_jug = syl_parts.get('jes_jug', '')
+    yang_jug = syl_parts.get('yang_jug', '')
+    syl = f'{sngon_jug}{mingzhi}{jes_jug}{yang_jug}་'
+    return syl

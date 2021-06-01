@@ -30,10 +30,10 @@ def get_mingzhi_options(syl_parts, mingzhi_mapping={}):
         mingzhi_mapping_path  = Path(__file__).parent / "resources/mingzhi_mapping.yaml"
         mingzhi_mapping = from_yaml(mingzhi_mapping_path.read_text(encoding='utf-8'))
     options = []
-    cur_sngon_jug = syl_parts['sngon_jug']
-    cur_mingzhi, mingzhi_vowel = parse_mingzhi(syl_parts['mingzhi'])
-    cur_jes_jug = syl_parts['jes_jug']
-    cur_yang_jug = syl_parts['yang_jug']
+    cur_sngon_jug = syl_parts.get('sngon_jug', '')
+    cur_mingzhi, mingzhi_vowel = parse_mingzhi(syl_parts.get('mingzhi', ''))
+    cur_jes_jug = syl_parts.get('jes_jug', '')
+    cur_yang_jug = syl_parts.get('yang_jug', '')
     if cur_mingzhi in mingzhi_mapping:
         for mingzhi_opt in mingzhi_mapping[cur_mingzhi]:
             cur_option = f'{cur_sngon_jug}{mingzhi_opt}{mingzhi_vowel}{cur_jes_jug}{cur_yang_jug}་'
