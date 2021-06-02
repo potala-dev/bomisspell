@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v0.0.7 (2021-06-02)
+### Fix
+* Set python version to 3.6 ([`39e589a`](https://github.com/potala-dev/bomisspell/commit/39e589affc7a627fd90e695d6efe848243f103c0))
+
 ## v0.0.6 (2021-06-01)
 ### Fix
 * **option_generator:** Multi syllable word misspelled option generation supported ([`e977253`](https://github.com/potala-dev/bomisspell/commit/e9772533b1850470758c6ef0a0aa5af8d15eb474))
