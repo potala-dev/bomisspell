@@ -96,7 +96,8 @@ def get_jes_jug(syl_part):
     Returns:
         str: jes jug if it exist else empty string
     """
-    if jes_jug_pat := re.search('ག|ང|ད|ན|བ|མ|འ|ར|ལ|ས', syl_part):
+    if re.search('ག|ང|ད|ན|བ|མ|འ|ར|ལ|ས', syl_part):
+        jes_jug_pat = re.search('ག|ང|ད|ན|བ|མ|འ|ར|ལ|ས', syl_part)
         return jes_jug_pat[0]
     else:
         if len(syl_part)>=2:
