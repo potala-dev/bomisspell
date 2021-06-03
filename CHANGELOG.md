@@ -2,6 +2,11 @@
 
 <!--next-version-placeholder-->
 
+## v0.0.8 (2021-06-03)
+### Fix
+* **setup:** Python requirement set to 3.6 ([`ccffbe6`](https://github.com/potala-dev/bomisspell/commit/ccffbe67c6e16156f19725f0d4445725f5c657a7))
+* **utils:** Walrus operator removed ([`8458f9f`](https://github.com/potala-dev/bomisspell/commit/8458f9f6c094d3947277f345b62eacff72bc0bfa))
+
 ## v0.0.7 (2021-06-02)
 ### Fix
 * Set python version to 3.6 ([`39e589a`](https://github.com/potala-dev/bomisspell/commit/39e589affc7a627fd90e695d6efe848243f103c0))
