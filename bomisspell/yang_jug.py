@@ -14,7 +14,7 @@ def get_yang_jug_options(syl_parts):
     mingzhi = syl_parts.get('mingzhi', '')
     jes_jug = syl_parts.get('jes_jug', '')
     yang_jug = syl_parts.get('yang_jug', '')
-    if not jes_jug or len(build_syl(syl_parts)) == 2:
+    if not jes_jug:
         return options
     syl_parts['yang_jug'] = ''
     if yang_jug:

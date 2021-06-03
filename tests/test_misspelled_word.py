@@ -12,10 +12,7 @@ def test_misspelled_word():
     assert expected_options == options
 
 def test_misspelled_word():
-    mingzhi_mapping = {
-        'ཇ': ['བྱ', 'ལྗ', 'རྗ'],
-    }
-    word = 'འཇུག་'
-    expected_options = ['ཇུག་', 'གཇུག་', 'དཇུག་', 'བཇུག་', 'མཇུག་', 'འབྱུག་', 'འལྗུག་', 'འརྗུག་', 'འཇུགས་', 'འཇུགད་', 'འཇུག་']
-    options = get_misspelled_word(word, mingzhi_mapping)
+    word = 'བུད་'
+    expected_options = ['གབུད་', 'དབུད་', 'བབུད་', 'མབུད་', 'འབུད་', 'སྦུད་', 'ལྦུད་', 'རྦུད་', 'བུདས་', 'བུདད་', 'བུད་']
+    options = get_misspelled_word(word)
     assert expected_options == options
