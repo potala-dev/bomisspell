@@ -16,7 +16,8 @@ def get_sngon_jug_options(syl_parts):
     yang_jug = syl_parts.get('yang_jug', '')
     if len(build_syl(syl_parts)) == 2:
         return options
-    options.append(f'{mingzhi}{jes_jug}{yang_jug}་')
+    if sngon_jug:
+        options.append(f'{mingzhi}{jes_jug}{yang_jug}་')
     for cur_sngon_jug in ['ག', 'ད', 'བ', 'མ', 'འ']:
         if cur_sngon_jug == sngon_jug:
             continue

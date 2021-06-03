@@ -67,7 +67,7 @@ def get_sngon_jug(syl_part):
     else:
         return ''
 
-def get_mingzhi(syl_first_half, syl_second_half):
+def get_mingzhi(syl_first_half, syl_second_half, sngon_jug):
     """Return mingzhi of the syllable using syllable components
 
     Args:
@@ -78,7 +78,7 @@ def get_mingzhi(syl_first_half, syl_second_half):
         str: mingzhi of syllable
     """
     mingzhi = ''
-    if syl_first_half[0] in ['ག', 'ད', 'བ', 'མ', 'འ'] and is_consonant(syl_first_half[1]):
+    if sngon_jug:
         mingzhi += syl_first_half[1:]
     else:
         mingzhi += syl_first_half
@@ -143,7 +143,7 @@ def parse_syl(syl):
     if components:
         if len(components[0]) >= 2:
             sngon_jug = get_sngon_jug(components[0])
-        mingzhi = get_mingzhi(components[0], components[1])
+        mingzhi = get_mingzhi(components[0], components[1], sngon_jug)
         if components[1]:
             jes_jug = get_jes_jug(components[1])
         if len(components[1]) >= 2:
