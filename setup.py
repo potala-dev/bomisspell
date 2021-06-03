@@ -14,7 +14,7 @@ def get_version(prop, project):
 
 
 setuptools.setup(
-    name="bomisspell",  # Replace with your own username
+    name="bomisspell",
     version=get_version("__version__", "bomisspell"),
     author="Tenzin Kaldan",
     author_email="kaldantenzin@gmail.com",
