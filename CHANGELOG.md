@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v0.0.10 (2021-06-07)
+### Fix
+* **exception:** No homophone words exception handled ([`bc1b490`](https://github.com/potala-dev/bomisspell/commit/bc1b49044a781e1f68f464bfaf7ab216cca903df))
+
 ## v0.0.9 (2021-06-07)
 ### Fix
 * **option-gen:** Removed correct word from options ([`2b333c9`](https://github.com/potala-dev/bomisspell/commit/2b333c9c26b5201aecb83b2353f38daace2c9e53))
