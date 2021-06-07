@@ -48,4 +48,5 @@ def get_misspelled_word(word, mingzhi_mapping = {}):
         misspelled_words = shuffel_syl(misspelled_syls)
     else:
         misspelled_words.append(word)
+    misspelled_words.remove(word)
     return misspelled_words
