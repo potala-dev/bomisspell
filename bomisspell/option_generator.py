@@ -1,12 +1,11 @@
 import itertools
-import random
 
 from pathlib import Path
-from re import M
 
-from bomisspell.utils import build_syl, get_syls, parse_syl, from_yaml
-from bomisspell.sgnon_jung import get_sngon_jug_options
+from bomisspell.exceptions import HomophoneNotFound
 from bomisspell.mingzhi import get_mingzhi_options
+from bomisspell.sgnon_jung import get_sngon_jug_options
+from bomisspell.utils import build_syl, get_syls, parse_syl, from_yaml
 from bomisspell.yang_jug import get_yang_jug_options
 
 def get_misspelled_opt(syl_parts, mingzhi_mapping={}):
@@ -49,4 +48,7 @@ def get_misspelled_word(word, mingzhi_mapping = {}):
     else:
         misspelled_words.append(word)
     misspelled_words.remove(word)
-    return misspelled_words
+    if misspelled_words:
+        return misspelled_words
+    else:
+        raise HomophoneNotFound
