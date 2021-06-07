@@ -1,1 +1,1 @@
-# misspell-generator
+Tibetan Homophone Generator
