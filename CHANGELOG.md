@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v0.0.9 (2021-06-07)
+### Fix
+* **option-gen:** Removed correct word from options ([`2b333c9`](https://github.com/potala-dev/bomisspell/commit/2b333c9c26b5201aecb83b2353f38daace2c9e53))
+
 ## v0.0.8 (2021-06-03)
 ### Fix
 * **setup:** Python requirement set to 3.6 ([`ccffbe6`](https://github.com/potala-dev/bomisspell/commit/ccffbe67c6e16156f19725f0d4445725f5c657a7))
